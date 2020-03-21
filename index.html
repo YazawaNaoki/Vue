@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <script>
+      var app4 = new Vue({
+        el: '#app-4',
+        data: {
+          todos: [
+            { text: 'Studying JavaScript' },
+            { text: 'Studying PHP' },
+            { text: 'Studying Ruby' },
+          ]
+        }
+      })
+
+      window.app = app4;
+    </script>
+  </body>
+</html>
+
+<!--
+vueは最初にvueオブジェクトを定義する
+vueオブジェクトは下記２つを設定
+- el:VueインスタンスがバインドするDOM要素の指定
+- data : Vueインスタンスが持つプロパティオブジェクト
+-->
+
+vueではタグに
+v-on:DOMイベント
+とつけるとそのイベントのときに発火させられる。
